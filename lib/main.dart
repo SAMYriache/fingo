@@ -1,7 +1,7 @@
-import 'package:fingo_app/fingerprint.dart';
+//import 'package:fingo_app/fingerprint.dart';
 //import 'package:fingo_app/splash_screen.dart';
 import 'package:flutter/material.dart';
-//import 'package:fingo_app/splash_screen.dart'; // Import the Splash widget
+import 'package:fingo_app/splash_screen.dart'; // Import the Splash widget
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FingerprintRecognitionUI(), // Set SplashScreen as the initial route
+      home: const Splash(), // Set SplashScreen as the initial route
     );
   }
 }

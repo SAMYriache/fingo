@@ -1,8 +1,9 @@
-// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously, unused_import
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously, unused_import, unused_field
 
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:photo_editor_sdk/photo_editor_sdk.dart';
 
 class FingerprintRecognitionUI extends StatefulWidget {
@@ -15,6 +16,60 @@ class FingerprintRecognitionUI extends StatefulWidget {
 
 class _FingerprintRecognitionUIState extends State<FingerprintRecognitionUI> {
   File? _imageFile;
+  bool _isLoading = false;
+  bool _matchFound = false;
+  Map<String, dynamic>? _fingerprintData; // Store the data
+  _submitFingerprint() async {
+    EasyLoading.show();
+    setState(() {
+      _isLoading = true; // Start loading
+    });
+
+    // Simulate fingerprint matching (replace with your actual logic)
+    await Future.delayed(const Duration(seconds: 3));
+
+    // Replace with your database matching result
+    bool hasMatch = true; // ... Your logic here
+
+    if (hasMatch) {
+      setState(() {
+        _matchFound = true;
+        _isLoading = false;
+        _fingerprintData = {
+          'name': 'John Doe',
+          'age': 35,
+          // ... other relevant data
+        };
+      });
+      EasyLoading.dismiss(); // Optional (dismiss automatically)
+      _showSuccessDialog();
+    }
+    // Handle case where no match is found
+// Example
+  }
+
+  _showSuccessDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Fingerprint Match Found!'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min, // Keep dialog compact
+          children: [
+            Text('Name: ${_fingerprintData!['name']}'),
+            Text('Age: ${_fingerprintData!['age']}'),
+            // ... More data if needed
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 
   Future<void> _pickImage(ImageSource source) async {
     final picker = ImagePicker();
@@ -108,5 +163,3 @@ class _FingerprintRecognitionUIState extends State<FingerprintRecognitionUI> {
     );
   }
 }
-
-_submitFingerprint() {}

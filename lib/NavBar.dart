@@ -7,23 +7,23 @@ void _showExitConfirmation(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: const Color(0xFF131313),
-        title: Text(
+        title: const Text(
           "Confirm Exit",
           style: TextStyle(color: Colors.white),
         ),
-        content: Text(
-          "Are you sure you want to exit?",
+        content: const Text(
+          "Êtes-vous sûr de vouloir quitter ?",
           style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
           TextButton(
-            child: Text("Cancel"),
+            child: const Text("Annuler"),
             onPressed: () {
               Navigator.of(context).pop(); // Fermer la boîte de dialogue
             },
           ),
           TextButton(
-            child: Text("Exit"),
+            child: const Text("Quitter"),
             onPressed: () {
               SystemNavigator.pop(); // Quitter l'application
             },
@@ -41,8 +41,9 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Contact Information',
+        foregroundColor: Colors.white, // Add this line
+        title: const Text(
+          'Informations de contact',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,
@@ -51,7 +52,7 @@ class ContactPage extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(16.0),
         margin: const EdgeInsets.all(10),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -63,12 +64,12 @@ class ContactPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Text('UNE RECLAMATION ? N\'HESITEZ PAS , ECRIVEZ-NOUS !',
+            Text('UNE RÉCLAMATION ? N\'HÉSITEZ PAS, ÉCRIVEZ-NOUS !',
                 style: TextStyle(color: Colors.white, fontSize: 20),
                 textAlign: TextAlign.center),
             SizedBox(height: 20),
             Text(
-              'Name : Riache Samy',
+              'Nom : Riache Samy',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -76,27 +77,27 @@ class ContactPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Phone: 0552473041',
+              'Téléphone : 0552473041',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             SizedBox(height: 10),
             Text(
-              'Email: \nsamyriache2@gmail.com',
+              'Email : \nsamyriache2@gmail.com',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             SizedBox(height: 80),
             Text(
-              'Name: AMMAR BOUDJELAL CHAKIB',
+              'Nom : AMMAR BOUDJELAL CHAKIB',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             SizedBox(height: 10),
             Text(
-              'Phone: 0657473334',
+              'Téléphone : 0657473334',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             SizedBox(height: 10),
             Text(
-              'Email: chakibammarboudjelal@gmail.com',
+              'Email : chakibammarboudjelal@gmail.com',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ],
@@ -112,8 +113,9 @@ class HowToUsePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'How to Use the App',
+        foregroundColor: Colors.white,
+        title: const Text(
+          'Comment utiliser l\'application',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,
@@ -122,11 +124,11 @@ class HowToUsePage extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(16.0),
         margin: const EdgeInsets.all(10),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'How to Use the Fingerprint Recognition App',
+              'Comment utiliser l\'application de reconnaissance d\'empreintes digitales',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -134,50 +136,50 @@ class HowToUsePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              '1. Choose a Photo',
+              '1. Choisissez une photo',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'Select a fingerprint photo from your gallery by tapping on the "Choose a photo" button.',
+              'Sélectionnez une photo d\'empreinte digitale depuis votre galerie en appuyant sur le bouton "Choisir une photo".',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             SizedBox(height: 20),
             Text(
-              '2. Take a Photo',
+              '2. Prenez une photo',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'Capture a new fingerprint photo using your camera by tapping on the "Take a photo" button.',
+              'Prenez une nouvelle photo d\'empreinte digitale en utilisant votre appareil photo en appuyant sur le bouton "Prendre une photo".',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             SizedBox(height: 20),
             Text(
-              '3. Submit',
+              '3. Soumettre',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'After selecting or capturing a photo, tap on the "Submit" button to start the fingerprint recognition process.',
+              'Après avoir sélectionné ou capturé une photo, appuyez sur le bouton "Soumettre" pour démarrer le processus de reconnaissance d\'empreintes digitales.',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             SizedBox(height: 20),
             Text(
-              '4. View Results',
+              '4. Voir les résultats',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              'The app will process the fingerprint and display the information of the person associated with the fingerprint.',
+              'L\'application traitera l\'empreinte digitale et affichera les informations de la personne associée à l\'empreinte digitale.',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ],
@@ -191,97 +193,65 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 250,
       shadowColor: Colors.white,
       backgroundColor: Colors.black,
       surfaceTintColor: Colors.white,
-      child: ListView(
-        children: [
-          Spacer(),
-          ListTile(
-            leading: Icon(
-              Icons.brightness_4,
-              color: Colors.white,
-            ),
-            title: Text(
-              "mode",
-              style: TextStyle(color: Colors.white),
-            ),
-            onTap: () => null,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              drawerTile(Icons.brightness_4, "Mode"),
+              drawerTile(Icons.question_mark_outlined, "Comment utiliser?",
+                  onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HowToUsePage()),
+                );
+              }),
+              drawerTile(Icons.contacts, "Contacts", onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactPage()),
+                );
+              }),
+              drawerTile(Icons.logout, "Quitter", onTap: () {
+                _showExitConfirmation(context);
+              }),
+            ],
           ),
-          ListTile(
-            leading: Icon(
-              Icons.assignment_turned_in,
-              color: Colors.white,
-            ),
-            title: Text(
-              "How to Use ?",
-              style: TextStyle(color: Colors.white),
-            ),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HowToUsePage()),
-            ),
-          ),
-          ListTile(
-              leading: Icon(
-                Icons.account_circle,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Contacts",
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContactPage()),
-                  )),
-          // ListTile(
-          //   leading: Icon(
-          //     Icons.share,
-          //     color: Colors.white,
-          //   ),
-          //   title: Text(
-          //     "Share App",
-          //     style: TextStyle(color: Colors.white),
-          //   ),
-          //   onTap: () => null,
-          // ),
-          // ListTile(
-          //   leading: Icon(
-          //     Icons.star,
-          //     color: Colors.white,
-          //   ),
-          //   title: Text(
-          //     "Rate us ",
-          //     style: TextStyle(color: Colors.white),
-          //   ),
-          //   onTap: () => null,
-          // ),
-          // ListTile(
-          //   leading: Icon(
-          //     Icons.toll,
-          //     color: Colors.white,
-          //   ),
-          //   title: Text(
-          //     "More apps and tools",
-          //     style: TextStyle(color: Colors.white),
-          //   ),
-          //   onTap: () => null,
-          // ),
-          ListTile(
-            leading: Icon(
-              Icons.exit_to_app,
-              color: Colors.white,
-            ),
-            title: Text(
-              "Exit ",
-              style: TextStyle(color: Colors.white),
-            ),
-            onTap: () => _showExitConfirmation(
-                context), // Appeler la méthode de confirmation
-          ),
-        ],
+        ),
       ),
     );
   }
+}
+
+Widget drawerTile(IconData icon, String text, {Function()? onTap}) {
+  return InkWell(
+    onTap: onTap,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(
+            width: 10,
+          ),
+          Icon(
+            icon,
+            size: 20,
+            color: Colors.white,
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white, fontSize: 18),
+          )
+        ],
+      ),
+    ),
+  );
 }

@@ -2,6 +2,7 @@
 //import 'package:fingo_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fingo_app/splash_screen.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart'; // Import the Splash widget
 
 void main() {
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Your App Title',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+        ),
         primarySwatch: Colors.blue,
       ),
       home: const Splash(), // Set SplashScreen as the initial route
